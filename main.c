@@ -4,15 +4,25 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int i, sum, num;
+	int i;
+	int answer=59;
+	int tryn=0;
 	
-	printf("자연수 하나를 입력하세요: ");
-	scanf("%d",&i);
+	do
+	{
+		printf("숫자를 하나 입력하세요: ");
+		scanf("%i",&i);
+		tryn++;
+		
+		if(i<answer)
+			printf("정답보다 작습니다.\n");
+			
+		else if(i>answer)
+			printf("정답보다 큽니다.\n") ;
+	}
+	while(i!=answer);
 	
-	for(num=1;num<=i;num++)
-		sum+=num;
-	
-	printf("1부터 입력한 정수의 합은 %i입니다.",sum);
+	printf("정답입니다. 시도횟수: %d",tryn);
 	
 	return 0;
 }
